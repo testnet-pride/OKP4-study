@@ -17,12 +17,11 @@
 ## TEST 1
 
 **`AX101 Dedicated Server Hetzner`**
-
+#
 ▪️ Processor - AMD Ryzen 5950X 32 CPU  
 ▪️ RAM - 128 GB  
 ▪️ Memory - 6.8 TB NVMe    
 ▪️ Bandwidth - 1 Gbit/s-Port    
-
 #
 **Instantiate:**   
 `8C5C657FB723A5BFCEFD5C9DE519DC94A24271027256BD7C8E13B7124DEEEA8B` gas `194 972`**/**`1 000 000`
@@ -48,12 +47,12 @@ ___
 ## TEST 2
 
 **`CX11 Dedicated Server Hetzner`** 
-
+#
 ▪️ Processor - 1 VCPU  
 ▪️ RAM - 2 GB   
 ▪️ Memory - 20 GB NVMe    
 ▪️ Bandwidth - 400 Mbit/s-Port    
-
+#
 **Instantiate:**   
 `C1B4F73EA23A88B2AD2FB501AD3E38AA5C74743276BE0F174404E43F29FA5EDD` gas `194 732`**/**`1 000 000`  
 
@@ -79,12 +78,12 @@ ___
 ## TEST 3
 
 **`Apple MacBook Pro 16" 2021 M1 Max 10-Core`**
-
+#
 ▪️ Processor - 10 CPU  
 ▪️ RAM - 64 GB  
 ▪️ Memory - 2 TB NVMe    
 ▪️ Bandwidth - 1 Gbit/s-Port    
-
+#
 **Instantiate:**   
 `8C5C657FB723A5BFCEFD5C9DE519DC94A24271027256BD7C8E13B7124DEEEA8B` gas `194 972`**/**`1 000 000`
 
