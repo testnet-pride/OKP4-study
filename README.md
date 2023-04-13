@@ -92,6 +92,9 @@ Update client.toml
 ```
 okp4d config node http://195.201.228.51:27657
 ```
+```
+okp4d config chain-id okp4-nemeton-1
+```
 ___
 # Objectarium
 
