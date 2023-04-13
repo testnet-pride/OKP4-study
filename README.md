@@ -103,6 +103,7 @@ ___
 The `okp4-objectarium` smart contract enables the storage of arbitrary `objects` in any [Cosmos blockchains](https://cosmos.network/) using the [CosmWasm](https://cosmwasm.com/) framework.
 
 This contract allows for storing `objects`, pinning and unpinning `objects` for a given sender address, and it also includes the ability to remove (forget) `objects` if they are no longer pinned.
+___
 
 ## Usage
 
@@ -115,9 +116,7 @@ Declaring Variables
 ADDRESS=okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh
 ```
 
-
-The `okp4-objectarium` can be instantiated as follows, refer to the schema for more information on configuration, limits and pagination configuration:
-
+**The `okp4-objectarium` can be instantiated as follows, refer to the schema for more information on configuration, limits and pagination configuration:**
 ```bash
 okp4d tx wasm instantiate 2 \
     --label "TestnetPride" \
@@ -129,23 +128,25 @@ okp4d tx wasm instantiate 2 \
     -y
 ```
 
-The resulting transaction hash is assigned to a variable:
-
+**The resulting transaction hash is assigned to a variable:**
 ```bash
 txhash=4D53DBDEE2843BAF2E53A0D0AA0BF2E23BCD4AC0643996EBABEF3CDC5BB99F8A
 ```
-
 ```bash
 CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes[0].value')
 ```
-<img width="988" alt="image" src="https://user-images.githubusercontent.com/83868103/231831622-b7247f91-efbe-4664-97a5-f4382b5d8006.png">
 
+<p align="center">
+<img src='https://user-images.githubusercontent.com/83868103/231831622-b7247f91-efbe-4664-97a5-f4382b5d8006.png' alt='PRE-RELISE'  width=80% > 
+</p>
+
+___
 
 
 
 ### Execute
 
-We can store an object by providing its data in base64 encoded, we can pin the stored object to prevent it from being removed:
+**We can store an object by providing its data in base64 encoded, we can pin the stored object to prevent it from being removed:**
 
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
@@ -155,20 +156,23 @@ okp4d tx wasm execute $CONTRACT_ADDR \
     "{\"store_object\":{\"data\": \"$(echo "$HOME/data.txt" | base64)\",\"pin\":true}}" \
     -y
 ```
-The resulting transaction hash is assigned to a variable:
+**The resulting transaction hash is assigned to a variable:**
 ```bash
 txhash=B9E2B23A0A57B53C86A4E31A7156407CFDF1B2640941C798F1F60B119304AC84
 ```
 ```bash
 OBJECT_ID=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[2].attributes[2].value')
 ```
-<img width="951" alt="image" src="https://user-images.githubusercontent.com/83868103/231835702-912bbe54-6234-457b-9d04-58db5407269d.png">
 
-The object id is stable as it is a hash, we can't store an object twice.
+<p align="center">
+<img src='https://user-images.githubusercontent.com/83868103/231835702-912bbe54-6234-457b-9d04-58db5407269d.png' alt='PRE-RELISE'  width=80% > 
+</p>
 
+**The object id is stable as it is a hash, we can't store an object twice.**
+
+____
 ### Pin
-With the following commands we can pin and unpin existing objects:
-
+**With the following commands we can pin and unpin existing objects:**
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
     --from $ADDRESS \
@@ -177,14 +181,20 @@ okp4d tx wasm execute $CONTRACT_ADDR \
     "{\"pin_object\":{\"id\": \"$OBJECT_ID\"}}" \
     -y
 ```
-A01BC3E78D997E1D6C9D892BB246D93D17EB3106E513E95046451D444D9B5CE5
+
+```python
+Check Pinning
+```
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
     "{\"object\": {\"id\": \"$OBJECT_ID\"}}"
 ```
 
-<img width="687" alt="image" src="https://user-images.githubusercontent.com/83868103/231836995-be436974-f3df-4d7d-8106-555f5519154d.png">
+<p align="center">
+<img src='https://user-images.githubusercontent.com/83868103/231836995-be436974-f3df-4d7d-8106-555f5519154d.png' alt='PRE-RELISE'  width=80% > 
+</p>
 
+___
 ### Unpin
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
@@ -194,13 +204,20 @@ okp4d tx wasm execute $CONTRACT_ADDR \
     "{\"unpin_object\":{\"id\": \"$OBJECT_ID\"}}" \
     -y
 ```
-01592651A249E4F53918717288E9A276411CDB6376ABF27B34140EC25EF263D6
+
+```python
+Check Unpinning
+```
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
     "{\"object\": {\"id\": \"$OBJECT_ID\"}}"
 ```
-<img width="694" alt="image" src="https://user-images.githubusercontent.com/83868103/231838649-e2248d62-b40e-4089-83c8-6909a4d97e39.png">
 
+<p align="center">
+<img src='https://user-images.githubusercontent.com/83868103/231838649-e2248d62-b40e-4089-83c8-6909a4d97e39.png' alt='PRE-RELISE'  width=80% > 
+</p>
+
+___
 ### Forget
 
 And if an object is not pinned, or pinned by the sender of transaction, we can remove it:
@@ -214,8 +231,19 @@ okp4d tx wasm execute $CONTRACT_ADDR \
     -y
 ```
 
-C96ED7775252F1BAC1FDDD0A6A0025E307C5D17035791E0931032C788241D83F
+```python
+Check Forgetting
+```
+```bash
+okp4d query wasm contract-state smart $CONTRACT_ADDR \
+    "{\"object\": {\"id\": \"$OBJECT_ID\"}}"
+```
 
+<p align="center">
+<img src='https://user-images.githubusercontent.com/83868103/231843750-ff2feaff-30bd-4d35-9d40-8b6927c47948.png' alt='PRE-RELISE'  width=100% > 
+</p>
+
+___
 ### Query
 
 Query an object by its id:
