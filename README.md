@@ -25,6 +25,20 @@ Publish a 1 page report / dashboards using this form.
 
 
 Исследование 
+Objectarium
+1. Instantiate
+4D53DBDEE2843BAF2E53A0D0AA0BF2E23BCD4AC0643996EBABEF3CDC5BB99F8A
+2. Execute
+3D3E17EFC6A872F3C904F4AC62B2977100338B34EE84B373E2EEAD87D77FB8A8
+3. Pin
+
+4. Unpin
+
+5. Forget
+
+
+
+
 
 Подготовка
 
@@ -132,6 +146,7 @@ okp4d tx wasm instantiate 2 \
 txhash=4D53DBDEE2843BAF2E53A0D0AA0BF2E23BCD4AC0643996EBABEF3CDC5BB99F8A
 ```
 <img width="684" alt="image" src="https://user-images.githubusercontent.com/83868103/231808055-d22072ea-feea-4052-afdc-8e175a7f9b0d.png">
+<img width="722" alt="image" src="https://user-images.githubusercontent.com/83868103/231812633-ec6221f7-f842-4d60-af58-b5bd44fb3cef.png">
 
 ```
 CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes[0].value')
@@ -156,10 +171,12 @@ okp4d tx wasm execute $CONTRACT_ADDR \
     --fees 2000uknow \
     --chain-id okp4-nemeton-1 \
     --node http://167.235.21.165:46657 \
-    "{\"store_object\":{\"data\": \"$(cat /Users/romanv1812/.okp4d/data.txt | base64)\",\"pin\":true}}"
+    "{\"store_object\":{\"data\": \"$(echo "/Users/romanv1812/.okp4d/data.txt" | base64)\",\"pin\":true}}"
 ```
 
-<img width="833" alt="image" src="https://user-images.githubusercontent.com/83868103/231812306-07b28d3e-acd9-40ba-9b47-63f21d0ff352.png">
+<img width="867" alt="image" src="https://user-images.githubusercontent.com/83868103/231813532-b1ca9849-1eee-469e-b25d-279fc2309aa4.png">
+<img width="710" alt="image" src="https://user-images.githubusercontent.com/83868103/231813704-6623ebb9-98dd-4cfa-8f97-5d87f59a4178.png">
+
 
 
 The object id is stable as it is a hash, we can't store an object twice.
