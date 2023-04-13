@@ -1,20 +1,14 @@
+<img width="1291" alt="image" src="https://user-images.githubusercontent.com/83868103/231887751-ad822f8b-9aef-454a-be83-d338ced45046.png">
 
-### `Navigation:`
-- [**`Preparation`**](https://github.com/testnet-pride/OKP4-study#preparation)
-- [**`Objectarium`**](https://github.com/testnet-pride/OKP4-study#objectarium)
-  - [`Instantiate`](https://github.com/testnet-pride/OKP4-study#instantiate)
-  - [`Execute`](https://github.com/testnet-pride/OKP4-study#execute)
-  - [`Pin`](https://github.com/testnet-pride/OKP4-study#pin)
-  - [`Unpin`](https://github.com/testnet-pride/OKP4-study#unpin)
-  - [`Forget`](https://github.com/testnet-pride/OKP4-study#forget)
-- [**`Single source`**](https://github.com/testnet-pride/OKP4-study#single-source)
-  - [`Instantiate`](https://github.com/testnet-pride/OKP4-study#instantiate-1) 
-  - [`Query`](https://github.com/testnet-pride/OKP4-study#query-1)
-  - [`Break`](https://github.com/testnet-pride/OKP4-study#break)
 
-The task is to conduct a study on gas consumption in relation to elements such as memory and CPU usage, with the goal of providing feedback and suggestions to ensure a fair cost for smart contracts implementing the protocol using the logic module. The study should be based on curated data from a running Node, and the results should be communicated to the team. Only Druid's delegator addresses can instantiate the okp4-objectarium and okp4-law-stone smart contracts, through the code id 2 for cw-storage and 3 for cw-law-stone. The team advises waiting for the second part of the phase before publishing, as new smart contracts will be tested during this phase and documentation will be provided for interacting with them.
 
-For the task, the following equipment was selected: AX101 Dedicated Server Hetzner, CX11 Virtual Server Hetzner, and Apple MacBook Pro 16" 2021 M1 Max 10-Core located at home.
+**The task is to conduct a study on gas consumption in relation to elements such as memory and CPU usage, with the goal of providing feedback and suggestions to ensure a fair cost for smart contracts implementing the protocol using the logic module.** 
+
+**The study should be based on curated data from a running Node, and the results should be communicated to the team. Only Druid's delegator addresses can instantiate the okp4-objectarium and okp4-law-stone smart contracts, through the code id 2 for cw-storage and 3 for cw-law-stone.** 
+
+**The team advises waiting for the second part of the phase before publishing, as new smart contracts will be tested during this phase and documentation will be provided for interacting with them.**
+#
+**For the task, the following equipment was selected: AX101 Dedicated Server Hetzner, CX11 Virtual Server Hetzner, and Apple MacBook Pro 16" 2021 M1 Max 10-Core located at home.**
 
 
 
@@ -24,8 +18,8 @@ For the task, the following equipment was selected: AX101 Dedicated Server Hetzn
 | RAM | 128 GB  | 2 GB | 64 GB |
 | Memory | 6.8 TB NVMe  | 20 GB NVMe | 2 TB NVMe |
 | Bandwidth | 1 Gbit/s-Port | 400 Mbit/s-Port | 1 Gbit/s-Port |
-
-The research is presented in the form of tables that contain the study results.
+#
+**The research is presented in the form of tables that contain the study results.**
 
 | Equipment | Action | Hash | Gas |
 | ----- | ----------- | ---------------------------------------------------------------- | ------- |
@@ -66,6 +60,20 @@ The research is presented in the form of tables that contain the study results.
 | CX11  | Execute | 6EC867A12D5C401A9663B971C3119D9B0DF9EF6E940F80FB6D1AED74F15FD420 | 209 918 |
 |MacBook| Execute | B59FFEDD0CEFE1FD0FA02BE99E492A9A15CC6E91A1135A8404A7517A238CD109 | 207 651 |
 
+
+
+### `Navigation:`
+- [**`Preparation`**](https://github.com/testnet-pride/OKP4-study#preparation)
+- [**`Objectarium`**](https://github.com/testnet-pride/OKP4-study#objectarium)
+  - [`Instantiate`](https://github.com/testnet-pride/OKP4-study#instantiate)
+  - [`Execute`](https://github.com/testnet-pride/OKP4-study#execute)
+  - [`Pin`](https://github.com/testnet-pride/OKP4-study#pin)
+  - [`Unpin`](https://github.com/testnet-pride/OKP4-study#unpin)
+  - [`Forget`](https://github.com/testnet-pride/OKP4-study#forget)
+- [**`Single source`**](https://github.com/testnet-pride/OKP4-study#single-source)
+  - [`Instantiate`](https://github.com/testnet-pride/OKP4-study#instantiate-1) 
+  - [`Query`](https://github.com/testnet-pride/OKP4-study#query-1)
+  - [`Break`](https://github.com/testnet-pride/OKP4-study#break)
 
 ## Preparation
 ```python
