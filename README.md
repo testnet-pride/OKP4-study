@@ -128,48 +128,47 @@ okp4d tx wasm instantiate 2 \
     --fees 200uknow \
     -y
 ```
-<img width="597" alt="image" src="https://user-images.githubusercontent.com/83868103/231827888-0a732912-259b-4c34-aca1-030489dcae84.png">
+<img width="587" alt="image" src="https://user-images.githubusercontent.com/83868103/231832042-ca7043dd-e5b3-4eee-81be-f22973c060c7.png">
 
 The resulting transaction hash is assigned to a variable:
 
-```
-txhash=043E25191EC4EE5A955EF900BDE532E212FB8628253823E9DD9CCBDCC02BCF64
+```bash
+txhash=4D53DBDEE2843BAF2E53A0D0AA0BF2E23BCD4AC0643996EBABEF3CDC5BB99F8A
 ```
 
-```
+```bash
 CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes[0].value')
 ```
+<img width="988" alt="image" src="https://user-images.githubusercontent.com/83868103/231831622-b7247f91-efbe-4664-97a5-f4382b5d8006.png">
+
 
 
 
 ### Execute
 
-cd $HOME/.okp4d
 
-touch data.txt
 
+touch $HOME/data.txt
 
 We can store an object by providing its data in base64 encoded, we can pin the stored object to prevent it from being removed:
 
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
-    --from okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
+    --from $ADDRESS \
     --gas 1000000 \
-    --broadcast-mode sync \
     --fees 2000uknow \
-    --chain-id okp4-nemeton-1 \
-    --node http://167.235.21.165:46657 \
-    "{\"store_object\":{\"data\": \"$(echo "/Users/romanv1812/.okp4d/data.txt" | base64)\",\"pin\":true}}"
+    "{\"store_object\":{\"data\": \"$(echo "$HOME/data.txt" | base64)\",\"pin\":true}}" \
+    -y
 ```
-
-<img width="525" alt="image" src="https://user-images.githubusercontent.com/83868103/231813532-b1ca9849-1eee-469e-b25d-279fc2309aa4.png"> <img width="465" alt="image" src="https://user-images.githubusercontent.com/83868103/231813704-6623ebb9-98dd-4cfa-8f97-5d87f59a4178.png">
-
-
-
-The object id is stable as it is a hash, we can't store an object twice.
+The resulting transaction hash is assigned to a variable:
+```bash
+txhash=B9E2B23A0A57B53C86A4E31A7156407CFDF1B2640941C798F1F60B119304AC84
 ```
+```bash
 OBJECT_ID=$(okp4d q tx 3D3E17EFC6A872F3C904F4AC62B2977100338B34EE84B373E2EEAD87D77FB8A8 -o json | jq -r .logs[].events[2].attributes[2].value)
 ```
+The object id is stable as it is a hash, we can't store an object twice.
+
 With the following commands we can pin and unpin existing objects:
 
 ```bash
