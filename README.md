@@ -114,14 +114,16 @@ The `okp4-objectarium` can be instantiated as follows, refer to the schema for m
 
 ```bash
 okp4d tx wasm instantiate 2 \
-    --label "my-storage" \
-    --from wallet \
+    --label "TestnetPride" \
+    --from okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
     --admin okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
     --gas 1000000 \
     --broadcast-mode block \
-    --fees 200uknow \
-    '{"bucket":"my-bucket","limits":{}, "config": {}, "pagination": {}}'
+    "{\"bucket\":"\"TestnetPride\"",\"limits\":{}, \"pagination\": {}}" \
+    --fees 2000uknow \
+    --node http://167.235.21.165:46657
 ```
+
 
 ### Execute
 
