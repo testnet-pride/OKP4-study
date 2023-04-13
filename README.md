@@ -118,7 +118,7 @@ okp4d tx wasm instantiate 2 \
     --from okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
     --admin okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
     --gas 1000000 \
-    --broadcast-mode block \
+    --broadcast-mode sync \
     "{\"bucket\":"\"TestnetPride\"",\"limits\":{}, \"pagination\": {}}" \
     --fees 2000uknow \
     --node http://167.235.21.165:46657
