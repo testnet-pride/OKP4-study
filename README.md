@@ -327,7 +327,7 @@ The instantiate will take as parameters the base64 encoded program and the addre
 
 ```bash
 okp4d tx wasm instantiate 3 \
-    --label "TestnetPride-single-source" \
+    --label "single-source" \
     --from $ADDRESS \
     --admin $ADDRESS \
     --gas 1000000 \
@@ -336,7 +336,7 @@ okp4d tx wasm instantiate 3 \
 ```
 **The resulting transaction hash is assigned to a variable:**
 ```bash
-txhash=D6C7DB5D86899093781A9F345E83CDCA3A49B4FF8AC4D378D4C006A84D4BB60E
+txhash=64A48AD5E80AB607573793F38A5816B183005DC3901DE629237C700EC46AE782
 ```
 ```bash
 CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes[0].value')
