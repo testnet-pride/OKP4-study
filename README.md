@@ -12,6 +12,7 @@
   - [`Query`](https://github.com/testnet-pride/OKP4-study#query-1)
   - [`Break`](https://github.com/testnet-pride/OKP4-study#break)
 - Feedback
+- Test2
 ___
 ## Preparation
 ```python
@@ -365,3 +366,5 @@ okp4d tx wasm execute $CONTRACT_ADDR \
     --broadcast-mode block \
     '"break_stone"'
 ```
+
+TEST 2
