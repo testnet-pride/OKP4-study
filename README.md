@@ -121,6 +121,7 @@ okp4d tx wasm instantiate 2 \
     --broadcast-mode sync \
     "{\"bucket\":"\"TestnetPride\"",\"limits\":{}, \"pagination\": {}}" \
     --fees 2000uknow \
+    --chain-id okp4-nemeton-1 \
     --node http://167.235.21.165:46657
 ```
 
