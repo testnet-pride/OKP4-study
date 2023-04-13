@@ -124,6 +124,8 @@ okp4d tx wasm instantiate 2 \
     --chain-id okp4-nemeton-1 \
     --node http://167.235.21.165:46657
 ```
+<img width="365" alt="image" src="https://user-images.githubusercontent.com/83868103/231804268-77d67738-7030-45fd-897a-053fed2a33c3.png"> <img width="600" alt="image" src="https://user-images.githubusercontent.com/83868103/231805293-ae1ae765-ac06-47e5-8ff8-3e3dad801105.png">
+
 
 
 ### Execute
