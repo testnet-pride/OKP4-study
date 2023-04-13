@@ -15,9 +15,10 @@ Objectarium
 
 
 
-Подготовка
-
-Установка бинарника 
+## Preparation
+```python
+Installation
+```
 ```bash
 git clone https://github.com/okp4/okp4d.git
 cd okp4d
@@ -26,21 +27,20 @@ make install
 okp4d version 
 # 4.1.0
 ```
-восстановление кошелька друида
+
+```python
+Wllet Recovery
+```
+
 ```bash
 okp4d keys add wallet --recover
 ```
+#
 
-I will conduct the study from my MAC, so I will use open RPC
-
-Добавить RPC в client.toml
-
+### I will conduct the study from my MAC, so I will use open RPC
+```python
+List Of Open RPC
 ```
-okp4d config node http://195.201.228.51:27657
-```
-
-
-Here is a list of open RPC I received that I will use for research:
 ```
 http://195.201.228.51:27657
 
@@ -87,6 +87,12 @@ http://65.109.38.208:46657
 http://136.243.88.91:6041
 ```
 
+### Добавить RPC в client.toml
+
+```
+okp4d config node http://195.201.228.51:27657
+```
+___
 # Objectarium
 
 ## Overview
