@@ -8,7 +8,11 @@ Navigation:
   - [`Pin`](https://github.com/testnet-pride/OKP4-study#pin)
   - [`Unpin`](https://github.com/testnet-pride/OKP4-study#unpin)
   - [`Forget`](https://github.com/testnet-pride/OKP4-study#forget)
-- 
+- [**`Single source`**](https://github.com/testnet-pride/OKP4-study#single-source)
+  - [`Instantiate`](https://github.com/testnet-pride/OKP4-study#instantiate-1) 
+  - [`Query`](https://github.com/testnet-pride/OKP4-study#query-1)
+  - [`Break`](https://github.com/testnet-pride/OKP4-study#break)
+- Feedback
 
 ## Preparation
 ```python
