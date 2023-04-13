@@ -220,7 +220,7 @@ okp4d query wasm contract-state smart $CONTRACT_ADDR \
 ___
 ### Forget
 
-And if an object is not pinned, or pinned by the sender of transaction, we can remove it:
+**And if an object is not pinned, or pinned by the sender of transaction, we can remove it:**
 
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
@@ -246,35 +246,35 @@ okp4d query wasm contract-state smart $CONTRACT_ADDR \
 ___
 ### Query
 
-Query an object by its id:
+**Query an object by its id:**
 
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
     "{\"object\": {\"id\": \"$OBJECT_ID\"}}"
 ```
 
-Or its data:
+**Or its data:**
 
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
     "{\"object_data\": {\"id\": \"$OBJECT_ID\"}}"
 ```
 
-We can also list the objects, eventually filtering on the object owner:
+**We can also list the objects, eventually filtering on the object owner:**
 
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
     "{\"objects\": {\"address\": \"$ADDRESS\"}}"
 ```
 
-And navigate in a cursor based pagination:
+**And navigate in a cursor based pagination:**
 
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
     "{\"objects\": {\"first\": 5, \"after\": \"32MUGxHoR66M4HT8ga7haKS6tLkJ1w5P4du6q3X9tZqvdSuSHNoUzwQCPwPyW8u5xLxso1Qx99GexVGfLGep1Wfv\"}}"
 ```
 
-We can also query object pins with the same cursor based pagination:
+**We can also query object pins with the same cursor based pagination:**
 
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
