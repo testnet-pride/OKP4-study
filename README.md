@@ -36,7 +36,7 @@ okp4d keys add wallet --recover
 ```
 #
 
-### I'll be doing research from my MAC without sync, so I'll be using open RPC.
+### For the same experiment conditions, I will use 1 PRC in all tests
 ```python
 List Of Open RPC
 ```
