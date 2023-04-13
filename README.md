@@ -141,15 +141,26 @@ CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes
 
 ### Execute
 
+cd $HOME/.okp4d
+
+touch data.txt
+
+
 We can store an object by providing its data in base64 encoded, we can pin the stored object to prevent it from being removed:
 
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
-    --from $ADDR \
+    --from okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
     --gas 1000000 \
-    --broadcast-mode block \
-    "{\"store_object\":{\"data\": \"$(cat my-data | base64)\",\"pin\":true}}"
+    --broadcast-mode sync \
+    --fees 2000uknow \
+    --chain-id okp4-nemeton-1 \
+    --node http://167.235.21.165:46657 \
+    "{\"store_object\":{\"data\": \"$(cat /Users/romanv1812/.okp4d/data.txt | base64)\",\"pin\":true}}"
 ```
+
+<img width="833" alt="image" src="https://user-images.githubusercontent.com/83868103/231812306-07b28d3e-acd9-40ba-9b47-63f21d0ff352.png">
+
 
 The object id is stable as it is a hash, we can't store an object twice.
 
