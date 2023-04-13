@@ -128,7 +128,6 @@ okp4d tx wasm instantiate 2 \
     --fees 200uknow \
     -y
 ```
-<img width="587" alt="image" src="https://user-images.githubusercontent.com/83868103/231832042-ca7043dd-e5b3-4eee-81be-f22973c060c7.png">
 
 The resulting transaction hash is assigned to a variable:
 
@@ -145,10 +144,6 @@ CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes
 
 
 ### Execute
-
-
-
-touch $HOME/data.txt
 
 We can store an object by providing its data in base64 encoded, we can pin the stored object to prevent it from being removed:
 
@@ -171,6 +166,7 @@ OBJECT_ID=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[2].attributes[2].
 
 The object id is stable as it is a hash, we can't store an object twice.
 
+### Pin
 With the following commands we can pin and unpin existing objects:
 
 ```bash
@@ -189,6 +185,7 @@ okp4d query wasm contract-state smart $CONTRACT_ADDR \
 
 <img width="687" alt="image" src="https://user-images.githubusercontent.com/83868103/231836995-be436974-f3df-4d7d-8106-555f5519154d.png">
 
+### Unpin
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
     --from $ADDRESS \
@@ -204,6 +201,7 @@ okp4d query wasm contract-state smart $CONTRACT_ADDR \
 ```
 <img width="694" alt="image" src="https://user-images.githubusercontent.com/83868103/231838649-e2248d62-b40e-4089-83c8-6909a4d97e39.png">
 
+### Forget
 
 And if an object is not pinned, or pinned by the sender of transaction, we can remove it:
 
