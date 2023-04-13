@@ -303,11 +303,12 @@ okp4d query wasm contract-state smart $CONTRACT_ADDR \
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
     "{\"object_pins\": {\"id\": \"$OBJECT_ID\", \"first\": 5, \"after\": \"32MUGxHoR66M4HT8ga7haKS6tLkJ1w5P4du6q3X9tZqvdSuSHNoUzwQCPwPyW8u5xLxso1Qx99GexVGfLGep1Wfv\"}}"
 ```
+___
 # Single source
 
 This example aims to illustrate the most simple case of the `okp4-law-stone`: The law is composed of only one Prolog source program.
 
-## The Program
+### The Program
 
 The spirit here is to provide a `okp4-law-stone` smart contract instance providing rules similar in form to Dataspace governance rules.
 
@@ -320,7 +321,7 @@ The `can(Action, DID)` predicate will allow or not an action for a `did` (i.e. D
 - `create_dataset` Only a valid DID having a minimum spendable of `10000uknow`;
 - `create_service` Only a valid DID having a minimum spendable of `100000uknow`;
 
-## Instantiate
+### Instantiate
 
 The instantiate will take as parameters the base64 encoded program and the address of a `okp4-objectarium` contract, on which the program will be stored and pinned to prevent its removal and thus ensure its availability:
 
@@ -336,7 +337,7 @@ okp4d tx wasm instantiate $CODE_ID \
 
 You can retrieve the new `okp4-law-stone` smart contract address in the `_contract_address` instantiate attribute of the transaction.
 
-## Query
+### Query
 
 By using the `Ask` query we can provide Prolog predicates to be evaluated againsts the underlying program:
 
@@ -345,7 +346,7 @@ okp4d query wasm contract-state smart $CONTRACT_ADDR \
     "{\"ask\": {\"query\": \"can('change_governance', 'did:key:okp41p8u47en82gmzfm259y6z93r9qe63l25dfwwng6').\"}}"
 ```
 
-## Break
+### Break
 
 Only the smart contract admin can break the stone, if any.
 
