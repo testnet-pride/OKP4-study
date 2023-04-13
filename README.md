@@ -126,6 +126,13 @@ okp4d tx wasm instantiate 2 \
 ```
 <img width="365" alt="image" src="https://user-images.githubusercontent.com/83868103/231804268-77d67738-7030-45fd-897a-053fed2a33c3.png"> <img width="600" alt="image" src="https://user-images.githubusercontent.com/83868103/231805293-ae1ae765-ac06-47e5-8ff8-3e3dad801105.png">
 
+Получаем адрес контракта и записываем в переменную
+```
+txhash=4D53DBDEE2843BAF2E53A0D0AA0BF2E23BCD4AC0643996EBABEF3CDC5BB99F8A
+
+CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r .logs[].events[1].attributes[0].value)
+```
+
 
 
 ### Execute
