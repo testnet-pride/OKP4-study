@@ -6,11 +6,11 @@ Objectarium
 2. Execute
 3D3E17EFC6A872F3C904F4AC62B2977100338B34EE84B373E2EEAD87D77FB8A8
 3. Pin
-
+A01BC3E78D997E1D6C9D892BB246D93D17EB3106E513E95046451D444D9B5CE5
 4. Unpin
-
+01592651A249E4F53918717288E9A276411CDB6376ABF27B34140EC25EF263D6
 5. Forget
-
+C96ED7775252F1BAC1FDDD0A6A0025E307C5D17035791E0931032C788241D83F
 
 
 
@@ -165,34 +165,58 @@ The resulting transaction hash is assigned to a variable:
 txhash=B9E2B23A0A57B53C86A4E31A7156407CFDF1B2640941C798F1F60B119304AC84
 ```
 ```bash
-OBJECT_ID=$(okp4d q tx 3D3E17EFC6A872F3C904F4AC62B2977100338B34EE84B373E2EEAD87D77FB8A8 -o json | jq -r .logs[].events[2].attributes[2].value)
+OBJECT_ID=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[2].attributes[2].value')
 ```
+<img width="951" alt="image" src="https://user-images.githubusercontent.com/83868103/231835702-912bbe54-6234-457b-9d04-58db5407269d.png">
+
 The object id is stable as it is a hash, we can't store an object twice.
 
 With the following commands we can pin and unpin existing objects:
 
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
-    --from $ADDR \
+    --from $ADDRESS \
     --gas 1000000 \
-    --broadcast-mode block \
-    "{\"pin_object\":{\"id\": \"$OBJECT_ID\"}}"
-okp4d tx wasm execute $CONTRACT_ADDR \
-    --from $ADDR \
-    --gas 1000000 \
-    --broadcast-mode block \
-    "{\"unpin_object\":{\"id\": \"$OBJECT_ID\"}}"
+    --fees 2000uknow \
+    "{\"pin_object\":{\"id\": \"$OBJECT_ID\"}}" \
+    -y
 ```
+A01BC3E78D997E1D6C9D892BB246D93D17EB3106E513E95046451D444D9B5CE5
+```bash
+okp4d query wasm contract-state smart $CONTRACT_ADDR \
+    "{\"object\": {\"id\": \"$OBJECT_ID\"}}"
+```
+
+<img width="687" alt="image" src="https://user-images.githubusercontent.com/83868103/231836995-be436974-f3df-4d7d-8106-555f5519154d.png">
+
+```bash
+okp4d tx wasm execute $CONTRACT_ADDR \
+    --from $ADDRESS \
+    --gas 1000000 \
+    --fees 2000uknow \
+    "{\"unpin_object\":{\"id\": \"$OBJECT_ID\"}}" \
+    -y
+```
+01592651A249E4F53918717288E9A276411CDB6376ABF27B34140EC25EF263D6
+```bash
+okp4d query wasm contract-state smart $CONTRACT_ADDR \
+    "{\"object\": {\"id\": \"$OBJECT_ID\"}}"
+```
+<img width="694" alt="image" src="https://user-images.githubusercontent.com/83868103/231838649-e2248d62-b40e-4089-83c8-6909a4d97e39.png">
+
 
 And if an object is not pinned, or pinned by the sender of transaction, we can remove it:
 
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
-    --from $ADDR \
+    --from $ADDRESS \
     --gas 1000000 \
-    --broadcast-mode block \
-    "{\"forget_object\":{\"id\": \"$OBJECT_ID\"}}"
+    --fees 2000uknow \
+    "{\"forget_object\":{\"id\": \"$OBJECT_ID\"}}" \
+    -y
 ```
+
+C96ED7775252F1BAC1FDDD0A6A0025E307C5D17035791E0931032C788241D83F
 
 ### Query
 
@@ -214,19 +238,19 @@ We can also list the objects, eventually filtering on the object owner:
 
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
-    "{\"objects\": {\"address\": \"okp41p8u47en82gmzfm259y6z93r9qe63l25dfwwng6\"}}"
+    "{\"objects\": {\"address\": \"$ADDRESS\"}}"
 ```
 
 And navigate in a cursor based pagination:
 
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
-    "{\"objects\": {\"first\": 5, \"after\": \"23Y5t5DBe7DkPwfJo3Sd26Y8Z9epmtpA1FTpdG7DiG6MD8vPRTzzbQ9TccmyoBcePkPK6atUiqcAzJVo3TfYNBGY\"}}"
+    "{\"objects\": {\"first\": 5, \"after\": \"32MUGxHoR66M4HT8ga7haKS6tLkJ1w5P4du6q3X9tZqvdSuSHNoUzwQCPwPyW8u5xLxso1Qx99GexVGfLGep1Wfv\"}}"
 ```
 
 We can also query object pins with the same cursor based pagination:
 
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
-    "{\"object_pins\": {\"id\": \"$OBJECT_ID\", \"first\": 5, \"after\": \"23Y5t5DBe7DkPwfJo3Sd26Y8Z9epmtpA1FTpdG7DiG6MD8vPRTzzbQ9TccmyoBcePkPK6atUiqcAzJVo3TfYNBGY\"}}"
+    "{\"object_pins\": {\"id\": \"$OBJECT_ID\", \"first\": 5, \"after\": \"32MUGxHoR66M4HT8ga7haKS6tLkJ1w5P4du6q3X9tZqvdSuSHNoUzwQCPwPyW8u5xLxso1Qx99GexVGfLGep1Wfv\"}}"
 ```
