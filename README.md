@@ -112,17 +112,18 @@ ___
 Declaring Variables
 ```
 ```
+LABEL=TP-test1
 ADDRESS=okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh
 ```
 
 **The `okp4-objectarium` can be instantiated as follows, refer to the schema for more information on configuration, limits and pagination configuration:**
 ```bash
 okp4d tx wasm instantiate 2 \
-    --label "TestnetPride" \
+    --label "$LABEL" \
     --from $ADDRESS \
     --admin $ADDRESS \
     --gas 1000000 \
-    "{\"bucket\":"\"TestnetPride\"",\"limits\":{}, \"pagination\": {}}" \
+    "{\"bucket\":"\"$LABEL\"",\"limits\":{}, \"pagination\": {}}" \
     --fees 200uknow \
     -y
 ```
@@ -149,7 +150,7 @@ okp4d tx wasm execute $CONTRACT_ADDR \
     --from $ADDRESS \
     --gas 1000000 \
     --fees 2000uknow \
-    "{\"store_object\":{\"data\": \"$(echo "$HOME/data.txt" | base64)\",\"pin\":true}}" \
+    "{\"store_object\":{\"data\": \"$(echo "$HOME/$LABEL.txt" | base64)\",\"pin\":true}}" \
     -y
 ```
 **The resulting transaction hash is assigned to a variable:**
