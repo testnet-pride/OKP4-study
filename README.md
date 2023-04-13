@@ -93,6 +93,7 @@ okp4d tx wasm instantiate 2 \
     --admin okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
     --gas 1000000 \
     --broadcast-mode block \
+    --fees 200uknow \
     '{"bucket":"my-bucket","limits":{}, "config": {}, "pagination": {}}'
 ```
 
