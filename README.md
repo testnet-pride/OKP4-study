@@ -32,8 +32,8 @@ The `okp4-objectarium` can be instantiated as follows, refer to the schema for m
 ```bash
 okp4d tx wasm instantiate $CODE_ID \
     --label "my-storage" \
-    --from $ADDR \
-    --admin $ADMIN_ADDR \
+    --from wallet \
+    --admin okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
     --gas 1000000 \
     --broadcast-mode block \
     '{"bucket":"my-bucket","limits":{}, "config": {}, "pagination": {}}'
