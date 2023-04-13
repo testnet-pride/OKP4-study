@@ -1,3 +1,29 @@
+Задача:
+
+Description
+During this phase we'll start using the logic module and upload smart contracts implementing the protocol, the related transaction messages will have a certain gas consumption which may at first be irrelevant in comparison with the actual execution cost. Regarding your validation role, you have at your disposal elements allowing you to judge this relevance.
+
+Send us a study highlighting gas consumption relevancy in relation with elements at your disposal (e.g. Memory and CPU usage). Argued with curated data from your running Node, provide us feedback and suggestions to help us ensuring a fair cost.
+
+We advise you to wait for the second part of the phase before publishing - new smart contracts will be tested during this phase, we'll provide documentation to interact with them.
+
+Here are some documentation and usage examples for okp4-objectarium and okp4-law-stone smart contracts. Only Druid's delegator addresses can instantiate those contracts, through the code id 2 for cw-storage and 3 for cw-law-stone.
+
+Rewards
+Up to 10 000 pts
+
+Judging Criteria
+OKP4 team will judge if any submission deserves points or not based on the following:
+
+Relevance
+Arguments backed by data
+Usefulness
+Non-relevant submissions or low-value ones will earn 0 points.
+
+How to Submit
+Publish a 1 page report / dashboards using this form.
+
+
 Исследование 
 
 Подготовка
