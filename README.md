@@ -153,7 +153,9 @@ okp4d tx wasm execute $CONTRACT_ADDR \
 
 
 The object id is stable as it is a hash, we can't store an object twice.
-OBJECT_ID=$(okp4d q tx $tshash -o json | jq -r .logs[].events[2].attributes[2].value)
+```
+OBJECT_ID=$(okp4d q tx 3D3E17EFC6A872F3C904F4AC62B2977100338B34EE84B373E2EEAD87D77FB8A8 -o json | jq -r .logs[].events[2].attributes[2].value)
+```
 With the following commands we can pin and unpin existing objects:
 
 ```bash
