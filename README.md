@@ -11,38 +11,14 @@
   - [`Instantiate`](https://github.com/testnet-pride/OKP4-study#instantiate-1) 
   - [`Query`](https://github.com/testnet-pride/OKP4-study#query-1)
   - [`Break`](https://github.com/testnet-pride/OKP4-study#break)
-- Feedback
-- Test2
 
-## TEST 1
+| |AX101 Dedicated Server Hetzner | CX11 Virtual Server Hetzner | Apple MacBook Pro 16" 2021 M1 Max 10-Core |
+| ---| --- | --- | --- |
+| Processor | 32 CPU | 1 VCPU | 10 CPU |
+| RAM | 128 GB  | 2 GB | 64 GB |
+| Memory | 6.8 TB NVMe  | 20 GB NVMe | 2 TB NVMe |
+| Bandwidth | 1 Gbit/s-Port | 400 Mbit/s-Port | 1 Gbit/s-Port |
 
-**`AX101 Dedicated Server Hetzner`**
-#
-▪️ Processor - AMD Ryzen 5950X 32 CPU  
-▪️ RAM - 128 GB  
-▪️ Memory - 6.8 TB NVMe    
-▪️ Bandwidth - 1 Gbit/s-Port    
-#
-
-## TEST 2
-
-**`CX11 Dedicated Server Hetzner`** 
-#
-▪️ Processor - 1 VCPU  
-▪️ RAM - 2 GB   
-▪️ Memory - 20 GB NVMe    
-▪️ Bandwidth - 400 Mbit/s-Port    
-#
-
-## TEST 3
-
-**`Apple MacBook Pro 16" 2021 M1 Max 10-Core`**
-#
-▪️ Processor - 10 CPU  
-▪️ RAM - 64 GB  
-▪️ Memory - 2 TB NVMe    
-▪️ Bandwidth - 1 Gbit/s-Port    
-#
 
 | Equipment | Action | Hash | Gas |
 | ----- | ----------- | ---------------------------------------------------------------- | ------- |
