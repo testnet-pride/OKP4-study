@@ -368,3 +368,5 @@ okp4d tx wasm execute $CONTRACT_ADDR \
 ```
 
 TEST 2
+
+CX11 
