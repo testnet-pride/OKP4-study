@@ -18,6 +18,13 @@ okp4d keys add wallet --recover
 
 I will conduct the study from my MAC, so I will use open RPC
 
+Добавить RPC в client.toml
+
+```
+okp4d config node http://195.201.228.51:27657
+```
+
+
 Here is a list of open RPC I received that I will use for research:
 ```
 http://195.201.228.51:27657
