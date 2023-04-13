@@ -1,6 +1,5 @@
-```python
-Navigation:
-```
+
+### `Navigation:`
 - [**`Preparation`**](https://github.com/testnet-pride/OKP4-study#preparation)
 - [**`Objectarium`**](https://github.com/testnet-pride/OKP4-study#objectarium)
   - [`Instantiate`](https://github.com/testnet-pride/OKP4-study#instantiate)
@@ -13,7 +12,7 @@ Navigation:
   - [`Query`](https://github.com/testnet-pride/OKP4-study#query-1)
   - [`Break`](https://github.com/testnet-pride/OKP4-study#break)
 - Feedback
-
+___
 ## Preparation
 ```python
 Installation
