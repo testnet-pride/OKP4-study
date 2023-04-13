@@ -326,14 +326,22 @@ The `can(Action, DID)` predicate will allow or not an action for a `did` (i.e. D
 The instantiate will take as parameters the base64 encoded program and the address of a `okp4-objectarium` contract, on which the program will be stored and pinned to prevent its removal and thus ensure its availability:
 
 ```bash
-okp4d tx wasm instantiate $CODE_ID \
-    --label "single-source" \
-    --from $ADDR \
-    --admin $ADMIN_ADDR \
+okp4d tx wasm instantiate 3 \
+    --label "TestnetPride-single-source" \
+    --from $ADDRESS \
+    --admin $ADDRESS \
     --gas 1000000 \
-    --broadcast-mode block \
-    "{\"program\":\"$(cat gov.pl | base64)\", \"storage_address\": \"$STORAGE_ADDR\"}"
+    --fees 2000uknow \
+    "{\"program\":\"$(cat gov.pl | base64)\", \"storage_address\": \"$CONTRACT_ADDR\"}"
 ```
+**The resulting transaction hash is assigned to a variable:**
+```bash
+txhash=D6C7DB5D86899093781A9F345E83CDCA3A49B4FF8AC4D378D4C006A84D4BB60E
+```
+```bash
+CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes[0].value')
+```
+
 
 You can retrieve the new `okp4-law-stone` smart contract address in the `_contract_address` instantiate attribute of the transaction.
 
