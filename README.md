@@ -139,9 +139,6 @@ CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes
 </p>
 
 ___
-
-
-
 ### Execute
 
 **We can store an object by providing its data in base64 encoded, we can pin the stored object to prevent it from being removed:**
