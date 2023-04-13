@@ -11,5 +11,7 @@ make install
 okp4d version 
 # 4.1.0
 ```
-восстановление кошелька 
-``` okp4d keys add $WALLET --recover```
+восстановление кошелька друида
+```bash
+okp4d keys add wallet --recover
+```
