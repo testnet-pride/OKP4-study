@@ -1,20 +1,4 @@
 
-Исследование 
-Objectarium
-1. Instantiate
-4D53DBDEE2843BAF2E53A0D0AA0BF2E23BCD4AC0643996EBABEF3CDC5BB99F8A
-2. Execute
-3D3E17EFC6A872F3C904F4AC62B2977100338B34EE84B373E2EEAD87D77FB8A8
-3. Pin
-A01BC3E78D997E1D6C9D892BB246D93D17EB3106E513E95046451D444D9B5CE5
-4. Unpin
-01592651A249E4F53918717288E9A276411CDB6376ABF27B34140EC25EF263D6
-5. Forget
-C96ED7775252F1BAC1FDDD0A6A0025E307C5D17035791E0931032C788241D83F
-
-
-
-
 ## Preparation
 ```python
 Installation
@@ -232,7 +216,7 @@ okp4d tx wasm execute $CONTRACT_ADDR \
 ```
 
 ```python
-Check Forgetting
+Query Object By ID
 ```
 ```bash
 okp4d query wasm contract-state smart $CONTRACT_ADDR \
@@ -242,6 +226,30 @@ okp4d query wasm contract-state smart $CONTRACT_ADDR \
 <p align="center">
 <img src='https://user-images.githubusercontent.com/83868103/231843750-ff2feaff-30bd-4d35-9d40-8b6927c47948.png' alt='PRE-RELISE'  width=100% > 
 </p>
+
+```python
+Query Object By Data
+```
+```bash
+okp4d query wasm contract-state smart $CONTRACT_ADDR \
+    "{\"object_data\": {\"id\": \"$OBJECT_ID\"}}"
+```
+
+<p align="center">
+<img src='https://user-images.githubusercontent.com/83868103/231844558-e1d4aaea-b274-4795-bc91-b55c1e8cb374.png' alt='PRE-RELISE'  width=70% > 
+</p>
+
+___
+
+### Objectarium HASHS
+
+```
+Instantiate: 4D53DBDEE2843BAF2E53A0D0AA0BF2E23BCD4AC0643996EBABEF3CDC5BB99F8A
+Execute:     3D3E17EFC6A872F3C904F4AC62B2977100338B34EE84B373E2EEAD87D77FB8A8
+Pin:         A01BC3E78D997E1D6C9D892BB246D93D17EB3106E513E95046451D444D9B5CE5
+Unpin:       01592651A249E4F53918717288E9A276411CDB6376ABF27B34140EC25EF263D6
+Forget:      C96ED7775252F1BAC1FDDD0A6A0025E307C5D17035791E0931032C788241D83F
+```
 
 ___
 ### Query
