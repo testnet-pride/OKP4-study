@@ -362,9 +362,9 @@ By breaking the stone, you will not be able to query it anymore.
 
 ```bash
 okp4d tx wasm execute $CONTRACT_ADDR \
-    --from $ADDR \
+    --from $ADDRESS \
     --gas 1000000 \
-    --broadcast-mode block \
+    --fees 2000uknow \
     '"break_stone"'
 ```
 
@@ -389,5 +389,33 @@ CX11
 
 **Instantiate:**  
 `667048F2A480C3ABED07B3C9675868D79B007353FA57E70D27CAD84D7B9F2CF7` gas `375 747`**/**`1 000 000`
+
+**Break:** 
+`99E00C7F4ABFA8BD536F723DF114B06330BA8E7F1EBA449451BDB09F6EFEBBD6` gas `287 796`**/**`1 000 000`
+
+TEST 3
+
+AX101
+
+
+**Instantiate:**   
+8C5C657FB723A5BFCEFD5C9DE519DC94A24271027256BD7C8E13B7124DEEEA8B gas 194 972/1 000 000
+
+**Execute:**      
+ 
+
+**Pin:**      
+ 
+
+**Unpin:**      
+
+
+**Forget:**      
+ 
+
+**Instantiate:**  
+
+
+**Break:** 
 
 
