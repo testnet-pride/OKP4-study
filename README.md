@@ -1,28 +1,3 @@
-Задача:
-
-Description
-During this phase we'll start using the logic module and upload smart contracts implementing the protocol, the related transaction messages will have a certain gas consumption which may at first be irrelevant in comparison with the actual execution cost. Regarding your validation role, you have at your disposal elements allowing you to judge this relevance.
-
-Send us a study highlighting gas consumption relevancy in relation with elements at your disposal (e.g. Memory and CPU usage). Argued with curated data from your running Node, provide us feedback and suggestions to help us ensuring a fair cost.
-
-We advise you to wait for the second part of the phase before publishing - new smart contracts will be tested during this phase, we'll provide documentation to interact with them.
-
-Here are some documentation and usage examples for okp4-objectarium and okp4-law-stone smart contracts. Only Druid's delegator addresses can instantiate those contracts, through the code id 2 for cw-storage and 3 for cw-law-stone.
-
-Rewards
-Up to 10 000 pts
-
-Judging Criteria
-OKP4 team will judge if any submission deserves points or not based on the following:
-
-Relevance
-Arguments backed by data
-Usefulness
-Non-relevant submissions or low-value ones will earn 0 points.
-
-How to Submit
-Publish a 1 page report / dashboards using this form.
-
 
 Исследование 
 Objectarium
@@ -146,7 +121,6 @@ okp4d tx wasm instantiate 2 \
 txhash=4D53DBDEE2843BAF2E53A0D0AA0BF2E23BCD4AC0643996EBABEF3CDC5BB99F8A
 ```
 <img width="684" alt="image" src="https://user-images.githubusercontent.com/83868103/231808055-d22072ea-feea-4052-afdc-8e175a7f9b0d.png">
-<img width="722" alt="image" src="https://user-images.githubusercontent.com/83868103/231812633-ec6221f7-f842-4d60-af58-b5bd44fb3cef.png">
 
 ```
 CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes[0].value')
@@ -174,8 +148,7 @@ okp4d tx wasm execute $CONTRACT_ADDR \
     "{\"store_object\":{\"data\": \"$(echo "/Users/romanv1812/.okp4d/data.txt" | base64)\",\"pin\":true}}"
 ```
 
-<img width="867" alt="image" src="https://user-images.githubusercontent.com/83868103/231813532-b1ca9849-1eee-469e-b25d-279fc2309aa4.png">
-<img width="710" alt="image" src="https://user-images.githubusercontent.com/83868103/231813704-6623ebb9-98dd-4cfa-8f97-5d87f59a4178.png">
+<img width="525" alt="image" src="https://user-images.githubusercontent.com/83868103/231813532-b1ca9849-1eee-469e-b25d-279fc2309aa4.png"> <img width="465" alt="image" src="https://user-images.githubusercontent.com/83868103/231813704-6623ebb9-98dd-4cfa-8f97-5d87f59a4178.png">
 
 
 
