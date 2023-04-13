@@ -108,28 +108,33 @@ This contract allows for storing `objects`, pinning and unpinning `objects` for 
 
 ### Instantiate
 
+```python
+Declaring Variables
+```
+```
+ADDRESS=okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh
+```
+
+
 The `okp4-objectarium` can be instantiated as follows, refer to the schema for more information on configuration, limits and pagination configuration:
 
 ```bash
 okp4d tx wasm instantiate 2 \
     --label "TestnetPride" \
-    --from okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
-    --admin okp418hhw0nx2wqctk22t52nm8qypxpzkstcxd689qh \
+    --from $ADDRESS \
+    --admin $ADDRESS \
     --gas 1000000 \
-    --broadcast-mode sync \
     "{\"bucket\":"\"TestnetPride\"",\"limits\":{}, \"pagination\": {}}" \
-    --fees 2000uknow \
-    --chain-id okp4-nemeton-1 \
-    --node http://167.235.21.165:46657
+    --fees 200uknow \
+    -y
 ```
-<img width="365" alt="image" src="https://user-images.githubusercontent.com/83868103/231804268-77d67738-7030-45fd-897a-053fed2a33c3.png"> <img width="600" alt="image" src="https://user-images.githubusercontent.com/83868103/231805293-ae1ae765-ac06-47e5-8ff8-3e3dad801105.png">
+<img width="597" alt="image" src="https://user-images.githubusercontent.com/83868103/231827888-0a732912-259b-4c34-aca1-030489dcae84.png">
 
-Получаем адрес контракта и записываем в переменную
+The resulting transaction hash is assigned to a variable:
 
 ```
-txhash=4D53DBDEE2843BAF2E53A0D0AA0BF2E23BCD4AC0643996EBABEF3CDC5BB99F8A
+txhash=043E25191EC4EE5A955EF900BDE532E212FB8628253823E9DD9CCBDCC02BCF64
 ```
-<img width="684" alt="image" src="https://user-images.githubusercontent.com/83868103/231808055-d22072ea-feea-4052-afdc-8e175a7f9b0d.png">
 
 ```
 CONTRACT_ADDR=$(okp4d q tx $txhash -o json | jq -r '.logs[].events[0].attributes[0].value')
