@@ -20,7 +20,7 @@
 | Bandwidth | 1 Gbit/s-Port | 400 Mbit/s-Port | 1 Gbit/s-Port |
 #
 **The research is presented in the form of tables that contain the study results.**
-
+### [**`Objectarium`**](https://github.com/testnet-pride/OKP4-study#objectarium)
 | Equipment | Action | Hash | Gas |
 | ----- | ----------- | ---------------------------------------------------------------- | ------- |
 | AX101 | Instantiate | 8C5C657FB723A5BFCEFD5C9DE519DC94A24271027256BD7C8E13B7124DEEEA8B | 194 972 |
@@ -49,18 +49,19 @@
 
 **Based on these findings, it appears that the gas consumption is independent of the equipment used and is mostly consistent across different actions. However, it is important to continue monitoring and analyzing the gas consumption as new smart contracts.**
 
-#
-| AX101 | Execute | B59FFEDD0CEFE1FD0FA02BE99E492A9A15CC6E91A1135A8404A7517A238CD109 |  207 651 |
-|--- | --- | ---| --- |
-| CX11  | Execute | 6EC867A12D5C401A9663B971C3119D9B0DF9EF6E940F80FB6D1AED74F15FD420 | 209 918 |
-|MacBook| Execute | B59FFEDD0CEFE1FD0FA02BE99E492A9A15CC6E91A1135A8404A7517A238CD109 | 207 651 |
-#
-| AX101 | Execute | B59FFEDD0CEFE1FD0FA02BE99E492A9A15CC6E91A1135A8404A7517A238CD109 |  207 651 |
-|--- | --- | ---| --- |
-| CX11  | Execute | 6EC867A12D5C401A9663B971C3119D9B0DF9EF6E940F80FB6D1AED74F15FD420 | 209 918 |
-|MacBook| Execute | B59FFEDD0CEFE1FD0FA02BE99E492A9A15CC6E91A1135A8404A7517A238CD109 | 207 651 |
+### [**`Single source`**](https://github.com/testnet-pride/OKP4-study#single-source)
+| Equipment | Action | Hash | Gas |
+| ----- | ----------- | ---------------------------------------------------------------- | ------- |
+| AX101 | Instantiate | 1A1FDCE9849074D5B1512C71B69982A1679A45559DE89D8C5C3F9F9ADB78FC72 | 376 146 |
+| CX11  | Instantiate | 667048F2A480C3ABED07B3C9675868D79B007353FA57E70D27CAD84D7B9F2CF7 | 375 747 |
+|MacBook| Instantiate | 172B0046B083CDE704D5DB33FE1F66052C0CC9D6B4859BE2F296F1352C132024 | 287 796 |
+|       |             |                                                                  |         |
+| AX101 | Break | 1A1FDCE9849074D5B1512C71B69982A1679A45559DE89D8C5C3F9F9ADB78FC72 | 149 287 |
+| CX11  | Break | 667048F2A480C3ABED07B3C9675868D79B007353FA57E70D27CAD84D7B9F2CF7 | 287 796 |
+|MacBook| Break | 172B0046B083CDE704D5DB33FE1F66052C0CC9D6B4859BE2F296F1352C132024 | 146 441 |
 
-
+**The presented table allows to conclude that each equipment (AX101 Dedicated Server Hetzner, CX11 Virtual Server Hetzner, Apple MacBook Pro 16" 2021 M1 Max 10-Core) was used to perform two operations - contract instantiation and deinstantiation, as well as contract destruction operation. Each operation consumed a certain amount of gas. However, there is no clear connection between the equipment and the amount of consumed gas.**
+___
 
 ### `Navigation:`
 - [**`Preparation`**](https://github.com/testnet-pride/OKP4-study#preparation)
